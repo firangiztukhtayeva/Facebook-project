@@ -5,3 +5,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='post_image/')
     text = models.TextField()
     created_at = models.DateTimeField()
+
+
+    def __str__(self):
+        return f'{self.name} - {self.course.name}'
