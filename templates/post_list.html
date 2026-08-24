@@ -5,16 +5,16 @@ Posts
 {% endblock title %}
 
 {% block body %}
-<div class="container">
+<div style="background-color: #F8F6F0 ;" class="container">
     <h1>Posts</h1>
     <div class="row">
         {% for post in posts %}
-        <div class="card" style="width: 18rem;">
+        <div style="background-color: thistle !important;width: 18rem ;" class="card">
             <img class="w-100" src="{{post.image.url}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
+                <h5 style="color: #2D232E !important;" class="card-title">{{ post.title }}</h5>
                 <p class="card-text">{{ post.text|truncatechars:100 }}</p>
-                <a href="#" class="btn btn-primary">See more</a>
+                <a style="background-color:#5C3D66 !important;border-color:#2a0f33; color:#FFFFFF" href="#" class="btn btn-primary rounded-pill">See more</a>
             </div>
         </div>
         {% endfor %}
