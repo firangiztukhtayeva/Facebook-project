@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} {{post.title}}{% endblock title%}
+
+{% block content %}
+<h1>{{post.title}}</h1>
+
+{% if post.author %}
+<p><small>Muallif: {{post.author.username}}</small></p>
+{% endif %}
+<p><small>{{post.created_at}}</small></p>
+
+<hr>
+<p>{{post.text}}</p>
+
+<p><a href="{% url 'post_view' %}">Orqaga</a></p>
+{% endblock content %}
