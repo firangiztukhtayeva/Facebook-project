@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} {{post.title}}{% endblock title%}
 
 {% block content %}
@@ -9,6 +10,13 @@
 {% endif %}
 <p><small>{{post.created_at}}</small></p>
 
+{% if post.image %}
+<img style="width: 95% !important; height: 80vh !important;" src="{{post.image.url}}"
+    class="card-img-top m-1 mx-auto w-100" alt="Default">
+{% else %}
+<img style="width: 95% !important; height: 80vh !important;" src="{% static 'images/default-image.jpg' %}"
+    class="card-img-top m-1 mx-auto w-100" alt="Default">
+{% endif %}
 <hr>
 <p>{{post.text}}</p>
 

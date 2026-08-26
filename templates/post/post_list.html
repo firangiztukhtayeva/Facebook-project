@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
 Posts
 {% endblock title %}
 
 {% block content %}
 <div style="background-color: #F8F6F0 ;" class="container-fluid p-5">
-    <h1  style="color: #6f3c73 !important;">Posts</h1>
+    <h1 style="color: #6f3c73 !important;">Posts</h1>
     <hr>
     <br>
     <br>
     <div class="row">
         {% for post in posts %}
-        <div style="background-color: thistle !important;width: 18rem ;" class="card">
-            <img class="w-100" src="{{post.image.url}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 style="color: #2D232E !important;" class="card-title">{{ post.title }}</h5>
-                <p class="card-text">{{ post.text|truncatechars:100 }}</p>
-                <a style="background-color:#5C3D66 !important;border-color:#2a0f33; color:#FFFFFF" href="{% url 'post_detail' post.slug %}" class="btn btn-primary rounded-pill">See more</a>
+        <div class="col-4">
+            <div style="background-color: thistle !important;" class="card">
+                {% if post.image %}
+                <img style="width: 95% !important; height: 40vh !important;" src="{{post.image.url}}" class="card-img-top m-1 mx-auto w-100" alt="Default">
+                {% else %}
+                <img style="width: 95% !important; height: 40vh !important;" src="{% static 'images/default-image.jpg' %}" class="card-img-top m-1 mx-auto w-100" alt="Default">
+                {% endif %}
+                <div class="card-body">
+                    <h5 style="color: #2D232E !important;" class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.text|truncatechars:100 }}</p>
+                    <a style="background-color:#5C3D66 !important;border-color:#2a0f33; color:#FFFFFF"
+                        href="{% url 'post_detail' post.slug %}" class="btn btn-primary rounded-pill">See more</a>
+                </div>
             </div>
         </div>
         {% endfor %}
