@@ -11,7 +11,7 @@ def post_detail(request,slug):
     return render(request, "post/post_detail.html", {'post': post})
 
 def home_view(request):
-    return render(request, 'post/post_list.html')
+    return render(request, 'home.html')
     
 
 
