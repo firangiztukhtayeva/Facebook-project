@@ -9,6 +9,9 @@ def post_view(request):
 def post_detail(request,slug):
     post = get_object_or_404(Post, slug=slug)
     return render(request, "post/post_detail.html", {'post': post})
+
+def home_view(request):
+    return render(request, 'post/post_list.html')
     
 
 
