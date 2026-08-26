@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title%}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <h1 class="display-4 fw-bold text-primary">Welcome to Facebook</h1>
+        
+        <p class="lead text-muted mt-3">Xush kelibsiz!</p>
+
+        <div class="mt-4">
+            <a href="{% url 'post_view' %}" class="btn btn-primary btn-lg px-4 py-2">
+                Posts
+            </a>
+        </div>
+    </div>
+{% endblock content %}
