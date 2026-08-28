@@ -131,5 +131,5 @@ MAILERS = {
 }
 
 LOGIN_URL = "/accounts/login/"
-LOGIN_REDIRECT_URL = "article_list"
-LOGOUT_REDIRECT_URL = "article_list"
+LOGIN_REDIRECT_URL = "home_view"
+LOGOUT_REDIRECT_URL = "home_view"
